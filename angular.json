@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "codehouse-testing"
+    }
+  },
+  "defaultProject": "codehouse-testing",
+  "cli": {
+    "analytics": false
+  }
 }
