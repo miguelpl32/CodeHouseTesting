@@ -5,6 +5,8 @@ import { Injectable} from '@angular/core';
 })
 export class PasswordService {
     constructor() { }
+    
+    // Este servicio tiene muchos tests
 
     passwordIsTooShort(passw: string){
         var result = false;
