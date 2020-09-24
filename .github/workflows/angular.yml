@@ -1,5 +1,5 @@
 # Nombre del workflow
-name: Mensaje por consola
+name: Build de Angular app
 
 # Disparadores de este workflow/pipeline
 on:
@@ -13,12 +13,22 @@ jobs:
   build:
     # Sistema operativo sobre el que se va a ejecutar el workflow/pipeline
     runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
 
     # Pasos/fases de nuestra cadena de montaje
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Instalar Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      
+      - name: Instalar dependencias/modulos
+        run: npm install
+      
+      - name: Build/Ejecutar
+        run: npm run build -- --prod
