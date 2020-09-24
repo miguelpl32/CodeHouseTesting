@@ -7,6 +7,7 @@ export class PasswordService {
     constructor() { }
     
     // Este servicio tiene muchos tests
+  // Otro comentario para disparar la ejecución de tests en el pull request
 
     passwordIsTooShort(passw: string){
         var result = false;
