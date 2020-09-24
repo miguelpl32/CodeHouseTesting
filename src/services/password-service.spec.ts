@@ -32,6 +32,6 @@ describe("Tests para nuestro Password Service", () => {
         var passw = "esvalida";
         var result = passwordService.passwordHasReservedWords(passw);
 
-        expect(result).toBeTrue();
+        expect(result).toBeFalse();
     })
 });
