@@ -1,0 +1,24 @@
+# Nombre del workflow
+name: Mensaje por consola
+
+# Disparadores de este workflow/pipeline
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# Inicia la cadena de montaje
+jobs:
+  build:
+    # Sistema operativo sobre el que se va a ejecutar el workflow/pipeline
+    runs-on: windows-latest
+
+    # Pasos/fases de nuestra cadena de montaje
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
